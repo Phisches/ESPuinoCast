@@ -57,7 +57,8 @@
         //#define REVERSE_ROTARY                        // To reverse encoder's direction; switching CLK / DT in hardware does the same
         #define ROTARYENCODER_CLK           34          // rotary encoder's CLK
         #define ROTARYENCODER_DT            39          // 39 = 'VN'; rotary encoder's DT
-        #define ROTARYENCODER_BUTTON        103         // Set to 99 to disable the button; connected to port-expander
+        //#define ROTARYENCODER_BUTTON        103         // Set to 99 to disable the button; connected to port-expander
+        #define ROTARYENCODER_BUTTON        99         // Set to 99 to disable the button; connected to port-expander
     #endif
 
     // Amp enable (optional)
@@ -68,17 +69,17 @@
     #define NEXT_BUTTON                     32         // Next-Button: connected to port-expander
 
     //#define PREVIOUS_BUTTON                 100         // Prev-Button: connected to port-expander
-    #define PREVIOUS_BUTTON                 4         // Prev-Button: connected to port-expander
+    #define PREVIOUS_BUTTON                 13         // Prev-Button: connected to port-expander
     //#define PAUSEPLAY_BUTTON                101         // Pplay-Button: connected to port-expander
-    #define PAUSEPLAY_BUTTON                13         // Pplay-Button: connected to port-expander
-    #define BUTTON_4                        104         // Button 4: connected to port-expander
-    #define BUTTON_5                        105         // Button 5: connected to port-expander
+    #define PAUSEPLAY_BUTTON                4         // Pplay-Button: connected to port-expander
+    #define BUTTON_4                        99         // Button 4: connected to port-expander
+    #define BUTTON_5                        99         // Button 5: connected to port-expander
 
     // Channels of port-expander can be read cyclic or interrupt-driven. It's strongly recommended to use the interrupt-way!
     // Infos: https://forum.espuino.de/t/einsatz-des-port-expanders-pca9555/306
     #ifdef PORT_EXPANDER_ENABLE
         //#define PE_INTERRUPT_PIN            36          // GPIO that is used to receive interrupts from port-expander + to wake up ESP32
-        #define PE_INTERRUPT_PIN            99          // GPIO that is used to receive interrupts from port-expander + to wake up ESP32
+        #define PE_INTERRUPT_PIN            4          // GPIO that is used to receive interrupts from port-expander + to wake up ESP32
     #endif
 
     // I2C-configuration (necessary for PCA9555)
@@ -93,14 +94,15 @@
     // Please note: only RTC-GPIOs (0, 4, 12, 13, 14, 15, 25, 26, 27, 32, 33, 34, 35, 36, 39, 99) can be used! Set to 99 to DISABLE.
     // Please note #2: this button can be used as interrupt-pin for port-expander. If so, all pins connected to port-expander can wake up ESPuino.
     //#define WAKEUP_BUTTON                   36          // Defines the button that is used to wake up ESPuino from deepsleep; set to 99 to disable
-    #define WAKEUP_BUTTON                   99          // Defines the button that is used to wake up ESPuino from deepsleep; set to 99 to disable
+    #define WAKEUP_BUTTON                   PAUSEPLAY_BUTTON          // Defines the button that is used to wake up ESPuino from deepsleep; set to 99 to disable
 
     // Power-control
     //#define POWER                           32          // GPIO used to drive transistor-circuit, that switches off peripheral devices while ESP32-deepsleep
     #define POWER                           99          // GPIO used to drive transistor-circuit, that switches off peripheral devices while ESP32-deepsleep
 
     // (optional) Neopixel
-    #define LED_PIN                         12          // GPIO for Neopixel-signaling
+    //#define LED_PIN                         12          // GPIO for Neopixel-signaling
+    #define LED_PIN                         99          // GPIO for Neopixel-signaling
 
     // (optinal) Headphone-detection
     #ifdef HEADPHONE_ADJUST_ENABLE
